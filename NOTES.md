@@ -40,6 +40,10 @@ If you are planning to use GeoTools in your named module project, you will need 
 	)
 )
 
+## The Maven "provided" Scope
+
+There are a few edge cases where a java module will have a "requires" statement for a module, which is in the maven "provided" scope. In this case, you must ensure that the module is provided! This is most critical when it comes to any kind of final packaging. For example, if you wish to use JDeps anywhere, then expect to include the systems.uom:systems-quantity in your maven dependencies, or it will not run.
+
 ## JDeps
 
 jdeps --generate-module-info . --multi-release base --module-path .\dependency\ .\dependency\gt-http-28-SNAPSHOT.jar

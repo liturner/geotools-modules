@@ -27,7 +27,7 @@
     </modules>
 
     <properties>
-        <geotools.version>28-SNAPSHOT</geotools.version>
+        <geotools.version>29-SNAPSHOT</geotools.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>11</maven.compiler.source>
@@ -168,7 +168,7 @@
                             <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
-                            <includeScope>runtime</includeScope>
+                            <includeScope>compile</includeScope>
                         </configuration>
                     </execution>
                 </executions>
@@ -176,5 +176,13 @@
         </plugins>
 
     </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>systems.uom</groupId>
+            <artifactId>systems-quantity</artifactId>
+            <version>2.1</version>
+        </dependency>
+    </dependencies>
 
 </project>

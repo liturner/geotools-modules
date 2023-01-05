@@ -20,6 +20,6 @@ for %%x in (
 ) do (
     @echo # %%x
     java -p .\%%x\target\dependency\ -m de.turnertech.geotools/de.turnertech.geotools.main.Application
-    jdeps --generate-module-info .\module-info --multi-release base --module-path .\%%x\target\dependency\ .\%%x\target\dependency\%%x-28-SNAPSHOT.jar
-    jdeps --generate-module-info .\module-info --multi-release 11 --module-path .\%%x\target\dependency\ .\%%x\target\dependency\%%x-28-SNAPSHOT.jar
+    jdeps --generate-module-info .\module-info --multi-release base --module-path .\%%x\target\dependency\ .\%%x\target\dependency\%%x-29-SNAPSHOT.jar
+    jdeps --generate-module-info .\module-info --multi-release 11 --module-path .\%%x\target\dependency\ .\%%x\target\dependency\%%x-29-SNAPSHOT.jar
 )
