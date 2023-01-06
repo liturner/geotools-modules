@@ -44,6 +44,10 @@ If you are planning to use GeoTools in your named module project, you will need 
 
 There are a few edge cases where a java module will have a "requires" statement for a module, which is in the maven "provided" scope. In this case, you must ensure that the module is provided! This is most critical when it comes to any kind of final packaging. For example, if you wish to use JDeps anywhere, then expect to include the systems.uom:systems-quantity in your maven dependencies, or it will not run.
 
+## The Maven "runtime" Scope
+
+If you have transitive dependencies with runtime scope, then you will likely run into errors writing your module-info.java. As previously mentioned, you must explicitely declare your transitive module dependencies if you have any automatically named modules in your module path. The reason is quite simple, Maven does not use runtime dependencies in compile time, so the "requires ..." is requiring a module which does not exist at compile time. To resolve this, you have to explicitely depend on the runtime dependency, with the compile scope. (ToDO: investigate if this is possible without specifying an explicit version.)
+
 ## JDeps
 
 jdeps --generate-module-info . --multi-release base --module-path .\dependency\ .\dependency\gt-http-28-SNAPSHOT.jar
